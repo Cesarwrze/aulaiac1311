@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout do código
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Construir imagem Docker
-      - uses: docker build -t meu-node-app .
+        run: docker build -t meu-node-app .
 
       - name: Executar container
-      - uses: docker run meu-node-app
+        run: docker run meu-node-app
