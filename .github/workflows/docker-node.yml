@@ -1,0 +1,20 @@
+name: Exemplo com Docker e JavaScript
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-docker-js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+      - uses: actions/checkout@v4
+
+      - name: Construir imagem Docker
+      - uses: docker build -t meu-node-app .
+
+      - name: Executar container
+      - uses: docker run meu-node-app
